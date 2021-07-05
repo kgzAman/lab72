@@ -18,27 +18,27 @@ import java.util.List;
 @RequestMapping("/")
 @Data
 public class MainController {
-//
-//    private  final MassageRepository massageRepository;
-//    private final MassageService massageService;
-//
-//    @GetMapping
-//    public String getMain(Model model){
-//        List<Massage> massages = massageService.getAll();
-//        model.addAttribute("massage",massages);
-//        return "main";
-//    }
-//
-//    @PostMapping
-//    public String getMain(Model model, MassageDto massageDto){
-//        String user =massageDto.getUser();
-//        LocalDateTime localDateTime = LocalDateTime.now();
-//        Massage massage = new Massage(user,massageDto.getMassage(),localDateTime);
-//        massageRepository.save(massage);
-//        List<Massage> massages = massageService.getAll();
-//        model.addAttribute("user",user);
-//        model.addAttribute("massage",massages);
-//        return "redirect:/";
-//    }
+
+    private  final MassageRepository massageRepository;
+    private final MassageService massageService;
+
+    @GetMapping
+    public String getMain(Model model){
+        List<Massage> massages = massageService.getAll();
+        model.addAttribute("massage",massages);
+        return "main";
+    }
+
+    @PostMapping
+    public String getMain(Model model, MassageDto massageDto){
+        String user =massageDto.getUser();
+        LocalDateTime localDateTime = LocalDateTime.now();
+        Massage massage = new Massage(user,massageDto.getMassage(),localDateTime);
+        massageRepository.save(massage);
+        List<Massage> massages = massageService.getAll();
+        model.addAttribute("user",user);
+        model.addAttribute("massage",massages);
+        return "redirect:/";
+    }
 
 }
