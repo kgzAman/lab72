@@ -15,11 +15,11 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Massage extends BaseEntity{
-//
-//    @NotBlank
-//    private String name;
-//
-//    private String text;
-//
-//    private LocalDateTime localDateTime;
-//}
+
+    @NotBlank
+    private String name;
+
+    private String text;
+
+    private LocalDateTime localDateTime;
+}
