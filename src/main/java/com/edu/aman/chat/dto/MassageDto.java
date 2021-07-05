@@ -4,8 +4,8 @@ import lombok.Data;
 
 @Data
 public class MassageDto {
-//
-//    private String user;
-//
-//    private String massage;
+
+    private String user;
+
+    private String massage;
 }
